@@ -1,0 +1,14 @@
+# @package _global_
+defaults:
+  - end_to_end_defaults
+  - env_config/leandojo_minif2f_val
+  - tac_model/lean_reprover
+  - search_model/bestfs
+
+exp_config:
+  name: reprover
+  experiment: minif2f
+
+logging_config:
+  project: minif2f
+  offline: false

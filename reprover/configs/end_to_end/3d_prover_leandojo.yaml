@@ -1,0 +1,16 @@
+# @package _global_
+defaults:
+  - end_to_end_defaults
+  - env_config/leandojo_novel_prems
+  - tac_model/diversity
+  - search_model/bestfs
+
+exp_config:
+  name: combined_model
+  experiment: minif2f
+
+logging_config:
+  project: minif2f
+  offline: false
+
+

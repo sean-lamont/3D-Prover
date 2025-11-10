@@ -1,0 +1,27 @@
+program: experiments.end_to_end.end_to_end_experiment
+name: combined_model_sweep
+description: Autenc Sweep
+project: minif2f
+
+method: grid
+metric:
+  goal: maximize
+  name: Pass@1
+parameters:
+  tac_model.diversity_config.score_network:
+    values: [ false ]
+  tac_model.diversity_config.fixed_size:
+    values: [ true ]
+  tac_model.diversity_config.num_filtered:
+    values: [ 32, 16, 8 ]
+  exp_config.name:
+    values: [ 'autoenc-k${tac_model.diversity_config.num_filtered}' ]
+
+command:
+  - ${env}
+  - ${interpreter}
+  - '-m'
+  - ${program}
+  - '--config-name=end_to_end/3d_prover_autoenc'
+  - ${args_no_hyphens}
+

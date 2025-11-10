@@ -1,0 +1,18 @@
+# @package _global_
+defaults:
+  - end_to_end_defaults
+  - env_config/lean4_env
+  - tac_model/internlm
+  - search_model/bestfs
+
+exp_config:
+    name: internlm_bestfs
+    experiment: internlm_dpp
+
+
+
+logging_config:
+  project: internlm_dpp
+  offline: false
+
+
